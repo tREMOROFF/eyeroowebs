@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <title>TREMOR PAGE</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #000;
-      overflow-x: hidden;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
       position: relative;
       color: white;
-      min-height: 250vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: start;
-      padding-top: 100px;
+      justify-content: center;
     }
 
     .glitch-bg {
@@ -64,22 +64,8 @@
       text-shadow: 0 0 20px #ffff00;
     }
 
-    h1.active {
-      animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse {
-      0% { text-shadow: 0 0 10px #ff0000; }
-      50% { text-shadow: 0 0 25px #ff0000; }
-      100% { text-shadow: 0 0 10px #ff0000; }
-    }
-
-    h1.scaled {
-      transform: scale(1.2);
-    }
-
     .links {
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       gap: 40px;
       z-index: 1;
@@ -105,6 +91,30 @@
       color: #00ff00;
       font-style: italic;
       z-index: 10;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 42px;
+        letter-spacing: 2px;
+      }
+
+      .links {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .links a {
+        font-size: 18px;
+      }
+
+      .podpis {
+        font-size: 12px;
+        bottom: 5px;
+        left: 5px;
+      }
     }
   </style>
 </head>
