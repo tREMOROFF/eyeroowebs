@@ -11,33 +11,12 @@
       overflow-x: hidden;
       position: relative;
       color: white;
-      min-height: 200vh; /* pro scroll */
+      min-height: 200vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: start;
       padding-top: 100px;
-    }
-
-    /* TREMOR nápis */
-    h1 {
-      font-size: 72px;
-      color: #ff0000;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 10px #ff0000;
-      transition: all 0.3s ease;
-      z-index: 1;
-      position: relative;
-    }
-
-    h1.active {
-      animation: pulse 1s infinite;
-    }
-
-    @keyframes pulse {
-      0%   { text-shadow: 0 0 10px #ff0000; }
-      50%  { text-shadow: 0 0 25px #ff0000; }
-      100% { text-shadow: 0 0 10px #ff0000; }
     }
 
     /* Glitch pozadí */
@@ -61,16 +40,60 @@
     }
 
     @keyframes glitchMove {
-      0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(-20px);
-        opacity: 0.3;
-      }
-      100% {
-        transform: translateX(0);
-      }
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-20px); opacity: 0.3; }
+      100% { transform: translateX(0); }
+    }
+
+    /* Nadpis */
+    a {
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 72px;
+      color: #ff0000;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      text-shadow: 2px 2px 10px #ff0000;
+      transition: all 0.3s ease;
+      z-index: 1;
+      position: relative;
+    }
+
+    h1:hover {
+      color: #ffff00;
+      text-shadow: 0 0 20px #ffff00;
+    }
+
+    h1.active {
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px #ff0000; }
+      50% { text-shadow: 0 0 25px #ff0000; }
+      100% { text-shadow: 0 0 10px #ff0000; }
+    }
+
+    /* Odkazy pod nadpisem */
+    .links {
+      margin-top: 40px;
+      display: flex;
+      gap: 40px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .links a {
+      font-size: 20px;
+      color: #ccc;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .links a:hover {
+      color: #ffff00;
+      text-shadow: 0 0 10px #ffff00;
     }
   </style>
 </head>
@@ -78,7 +101,6 @@
 
   <!-- Glitch pozadí -->
   <div class="glitch-bg">
-    <!-- Vygenerujeme několik čar -->
     <script>
       for (let i = 0; i < 50; i++) {
         const line = document.createElement('div');
@@ -90,11 +112,19 @@
     </script>
   </div>
 
-  <!-- TREMOR PAGE nápis -->
-  <h1 id="tremor">TREMOR PAGE</h1>
+  <!-- Nadpis s odkazem -->
+  <a href="https://open.spotify.com/artist/6XWNg0d1FZnoxe2v1rK2zu?si=dFQni9z4Shmg6HP73302bQ" target="_blank">
+    <h1 id="tremor">TREMOR PAGE</h1>
+  </a>
+
+  <!-- Odkazy -->
+  <div class="links">
+    <a href="https://www.youtube.com/@tremor_off" target="_blank">🎬 YouTube</a>
+    <a href="https://www.instagram.com/tremor_off/" target="_blank">📸 Instagram</a>
+  </div>
 
   <script>
-    // Efekt při scrollování
+    // Scroll animace pro nadpis
     const tremor = document.getElementById('tremor');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
