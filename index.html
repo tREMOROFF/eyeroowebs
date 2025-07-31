@@ -3,20 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moje první stránka</title>
+  <title>Kompletní stránka</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 40px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef;
+      margin: 20px;
     }
-    h1 {
-      color: #333;
+    header, footer {
+      background-color: #336;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      margin: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #336;
+      font-weight: bold;
+    }
+    section {
+      margin: 20px 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    video {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+    form {
+      background-color: #dde;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #336;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #559;
     }
   </style>
 </head>
 <body>
-  <h1>Vítej na mé stránce!</h1>
-  <p>Toto je ukázkový odstavec. Můžeš sem přidat libovolný obsah.</p>
+
+  <header>
+    <h1>Vítej na mé stránce</h1>
+    <p>Interaktivní ukázka HTML prvků</p>
+  </header>
+
+  <nav>
+    <a href="#obrazek">Obrázek</a>
+    <a href="#video">Video</a>
+    <a href="#formular">Formulář</a>
+    <a href="#interakce">Interakce</a>
+  </nav>
+
+  <section id="obrazek">
+    <h2>🖼️ Obrázek</h2>
+    <img src="https://via.placeholder.com/800x400?text=Ukázkový+obrázek" alt="Ukázkový obrázek">
+  </section>
+
+  <section id="video">
+    <h2>🎬 Video</h2>
+    <video controls>
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Tvůj prohlížeč nepodporuje přehrávání videa.
+    </video>
+  </section>
+
+  <section id="formular">
+    <h2>📬 Kontaktní formulář</h2>
+    <form>
+      <label for="name">Jméno:</label>
+      <input type="text" id="name" name="name">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+
+      <label for="message">Zpráva:</label>
+      <textarea id="message" name="message" rows="5"></textarea>
+
+      <button type="submit">Odeslat</button>
+    </form>
+  </section>
+
+  <section id="interakce">
+    <h2>🧪 Interakce s JavaScriptem</h2>
+    <p>Klikni na tlačítko a uvidíš kouzlo:</p>
+    <button onclick="zobrazZpravu()">Klikni mě</button>
+    <p id="vystup"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Tremi – Všechny prvky na jednom místě</p>
+  </footer>
+
+  <script>
+    function zobrazZpravu() {
+      const vystup = document.getElementById('vystup');
+      vystup.textContent = "✨ Zde je tvoje interaktivní zpráva! Děkujeme, že používáš tuto stránku.";
+    }
+  </script>
+
 </body>
 </html>
