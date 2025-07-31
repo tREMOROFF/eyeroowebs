@@ -11,7 +11,7 @@
       overflow-x: hidden;
       position: relative;
       color: white;
-      min-height: 200vh;
+      min-height: 250vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -76,6 +76,11 @@
       100% { text-shadow: 0 0 10px #ff0000; }
     }
 
+    /* Efekt scale */
+    h1.scaled {
+      transform: scale(1.2);
+    }
+
     /* Odkazy pod nadpisem */
     .links {
       margin-top: 40px;
@@ -95,6 +100,36 @@
       color: #ffff00;
       text-shadow: 0 0 10px #ffff00;
     }
+
+    /* Kontakt sekce */
+    .kontakt {
+      margin-top: 100px;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+    }
+
+    .kontakt input {
+      padding: 10px;
+      font-size: 18px;
+      width: 300px;
+      border: none;
+      border-radius: 5px;
+      background-color: #111;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    /* Podpis vlevo dole */
+    .podpis {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 14px;
+      color: #555;
+      font-style: italic;
+      z-index: 10;
+    }
   </style>
 </head>
 <body>
@@ -113,24 +148,39 @@
   </div>
 
   <!-- Nadpis s odkazem -->
-  <a href="https://open.spotify.com/artist/6XWNg0d1FZnoxe2v1rK2zu?si=dFQni9z4Shmg6HP73302bQ" target="_blank">
+  <a href="https://open.spotify.com/artist/6XWNg0d1FZnoxe2v1rK2zu?si=G44n-BlKQ2-KDwKEa9lSHA" target="_blank">
     <h1 id="tremor">TREMOR PAGE</h1>
   </a>
 
   <!-- Odkazy -->
   <div class="links">
-    <a href="https://www.youtube.com/@tremor_off" target="_blank">🎬 YouTube</a>
+    <a href="https://www.youtube.com/@tremor_off">🎬 YouTube</a>
     <a href="https://www.instagram.com/tremor_off/" target="_blank">📸 Instagram</a>
   </div>
 
+  <!-- Kontakt sekce -->
+  <div class="kontakt">
+    <h2>📬 Zadej svůj e-mail</h2>
+    <input type="email" placeholder="tvuj@email.cz">
+  </div>
+
+  <!-- Podpis -->
+  <div class="podpis">vytvořil Tremor</div>
+
   <script>
-    // Scroll animace pro nadpis
     const tremor = document.getElementById('tremor');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         tremor.classList.add('active');
       } else {
         tremor.classList.remove('active');
+      }
+
+      // Efekt scale při větším scrollu
+      if (window.scrollY > 500) {
+        tremor.classList.add('scaled');
+      } else {
+        tremor.classList.remove('scaled');
       }
     });
   </script>
