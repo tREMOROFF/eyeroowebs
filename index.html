@@ -19,7 +19,6 @@
       padding-top: 100px;
     }
 
-    /* Glitch pozadí */
     .glitch-bg {
       position: absolute;
       top: 0;
@@ -45,7 +44,6 @@
       100% { transform: translateX(0); }
     }
 
-    /* Nadpis */
     a {
       text-decoration: none;
     }
@@ -76,12 +74,10 @@
       100% { text-shadow: 0 0 10px #ff0000; }
     }
 
-    /* Efekt scale */
     h1.scaled {
       transform: scale(1.2);
     }
 
-    /* Odkazy pod nadpisem */
     .links {
       margin-top: 40px;
       display: flex;
@@ -101,13 +97,12 @@
       text-shadow: 0 0 10px #ffff00;
     }
 
-    /* Podpis vlevo dole */
     .podpis {
       position: fixed;
       bottom: 10px;
       left: 10px;
       font-size: 14px;
-      color: #00ff00; /* zelená barva */
+      color: #00ff00;
       font-style: italic;
       z-index: 10;
     }
@@ -115,7 +110,6 @@
 </head>
 <body>
 
-  <!-- Glitch pozadí -->
   <div class="glitch-bg">
     <script>
       for (let i = 0; i < 50; i++) {
@@ -128,37 +122,16 @@
     </script>
   </div>
 
-  <!-- Nadpis s odkazem -->
   <a href="https://open.spotify.com/artist/6XWNg0d1FZnoxe2v1rK2zu?si=G44n-BlKQ2-KDwKEa9lSHA" target="_blank">
     <h1 id="tremor">TREMOR PAGE</h1>
   </a>
 
-  <!-- Odkazy -->
   <div class="links">
     <a href="https://www.youtube.com/@tremor_off">🎬 YouTube</a>
     <a href="https://www.instagram.com/tremor_off/" target="_blank">📸 Instagram</a>
   </div>
 
-  <!-- Podpis -->
   <div class="podpis">vytvořil Tremor</div>
-
-  <script>
-    const tremor = document.getElementById('tremor');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        tremor.classList.add('active');
-      } else {
-        tremor.classList.remove('active');
-      }
-
-      // Efekt scale při větším scrollu
-      if (window.scrollY > 500) {
-        tremor.classList.add('scaled');
-      } else {
-        tremor.classList.remove('scaled');
-      }
-    });
-  </script>
 
 </body>
 </html>
